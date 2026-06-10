@@ -231,6 +231,44 @@ textarea {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.footer-link-row {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.028);
+  padding: 0.75rem;
+  color: rgba(255, 255, 255, 0.72);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.footer-link-row:hover {
+  transform: translateY(-2px);
+  border-color: rgba(94, 139, 255, 0.42);
+  background: rgba(94, 139, 255, 0.07);
+}
+
+.footer-link-icon {
+  display: grid;
+  height: 2.25rem;
+  width: 2.25rem;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(94, 139, 255, 0.12);
+  color: #9db5ff;
+}
+
+.footer-link-icon svg {
+  height: 1.1rem;
+  width: 1.1rem;
+  fill: currentColor;
+}
+
 .contact-link::after,
 .link-underline::after {
   content: '';

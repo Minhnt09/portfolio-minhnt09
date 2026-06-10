@@ -1,15 +1,31 @@
 <section id="experience" class="section-pad px-5">
-  <app-section-title eyebrow="Timeline" title="Learning through focused, practical milestones." description="A compact view of the path from IT fundamentals to Angular product development." />
+  <app-section-title eyebrow="Experience" title="Angular work, personal projects, and growth path." description="A CV-aligned timeline covering internship experience, Zamy e-commerce, education, and current frontend focus." />
 
-  <div class="timeline mx-auto max-w-4xl">
+  <div class="timeline mx-auto max-w-5xl">
     @for (item of experiences; track item.title; let i = $index) {
-      <div appRevealOnScroll [revealDelay]="i * 90" class="timeline-item relative grid gap-5 pb-10 pl-10 md:grid-cols-[1fr_1.4fr] md:gap-10 md:pl-0" [class.md:text-right]="i % 2 === 0">
+      <div appRevealOnScroll [revealDelay]="i * 90" class="timeline-item relative grid gap-5 pb-10 pl-10 md:grid-cols-[.82fr_1.25fr] md:gap-10 md:pl-0" [class.md:text-right]="i % 2 === 0">
         <div class="timeline-dot absolute left-0 top-1 h-4 w-4 rounded-full border border-[#8dabff] bg-[#050505] shadow-[0_0_28px_rgba(94,139,255,.8)] md:left-1/2 md:-translate-x-1/2"></div>
-        <div [class.md:col-start-2]="i % 2 !== 0">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#79a0ff]">{{ item.period }}</p>
+        <div class="rounded-[24px] border border-white/8 bg-white/[0.035] p-5" [class.md:col-start-2]="i % 2 !== 0">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#79a0ff]">{{ item.category }}</p>
           <h3 class="mt-2 text-2xl font-semibold text-white">{{ item.title }}</h3>
+          @if (item.company) {
+            <p class="mt-2 text-sm font-medium text-white/70">{{ item.company }}</p>
+          }
+          <p class="mt-3 text-xs uppercase tracking-[0.16em] text-white/38">{{ item.period }}</p>
         </div>
-        <p class="text-sm leading-7 text-white/58" [class.md:col-start-1]="i % 2 !== 0" [class.md:row-start-1]="i % 2 !== 0">{{ item.description }}</p>
+        <div class="rounded-[24px] border border-white/8 bg-[#0b0b0b]/72 p-5" [class.md:col-start-1]="i % 2 !== 0" [class.md:row-start-1]="i % 2 !== 0">
+          <p class="text-sm leading-7 text-white/62">{{ item.description }}</p>
+          @if (item.highlights?.length) {
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-white/56">
+              @for (highlight of item.highlights; track highlight) {
+                <li class="flex gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#79a0ff] shadow-[0_0_12px_rgba(121,160,255,.8)]"></span>
+                  <span>{{ highlight }}</span>
+                </li>
+              }
+            </ul>
+          }
+        </div>
       </div>
     }
   </div>

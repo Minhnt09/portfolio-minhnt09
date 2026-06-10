@@ -13,10 +13,11 @@ import { RevealOnScrollDirective } from '../../../shared/directives/reveal-on-sc
 export class About {
   readonly profile = profile;
   readonly facts = [
-    ['University', profile.university],
-    ['Experience', 'Frontend projects and continuous learning'],
-    ['Tech Focus', 'Angular, TypeScript, UI/UX, Responsive Web'],
+    ['University', `${profile.university} - ${profile.major}`],
+    ['Experience', 'Frontend Developer Intern at OSP Group'],
+    ['Tech Focus', 'Angular, TypeScript, RxJS, REST API'],
     ['Location', profile.location],
     ['Email', profile.email],
+    ['English', profile.english],
   ];
 }

@@ -1,26 +1,46 @@
 <section id="projects" class="section-pad px-5">
-  <app-section-title eyebrow="Projects" title="A premium e-commerce showcase built with Angular." description="Practical features, responsive UI, and polished interaction details for a fashion storefront." />
+  <app-section-title eyebrow="Personal Project" title="Zamy Clothing Website." description="A CV-backed Angular e-commerce project with product flows, reusable components, REST API integration, RxJS cart state, checkout UI, and Vercel/Render deployment." />
 
-  <div class="mx-auto grid max-w-6xl gap-8">
+  <div class="mx-auto grid max-w-7xl gap-8">
     @for (project of projects; track project.slug) {
-      <article appRevealOnScroll class="project-card interactive group grid overflow-hidden rounded-[32px] border border-white/10 bg-[#101010]/78 shadow-2xl shadow-black/30 md:grid-cols-[1.05fr_.95fr]">
-        <a [routerLink]="['/projects', project.slug]" class="relative min-h-[24rem] overflow-hidden bg-black">
-          <video class="h-full min-h-[24rem] w-full object-cover opacity-75 transition duration-700 group-hover:scale-105" autoplay loop muted playsinline preload="metadata" [src]="project.image"></video>
-          <div class="absolute inset-0 bg-gradient-to-tr from-black via-black/20 to-[#5e8bff]/20 opacity-80"></div>
-          <div class="absolute left-6 top-6 rounded-full border border-white/10 bg-black/45 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur-xl">{{ project.eyebrow }}</div>
+      <article appRevealOnScroll class="project-card interactive group grid overflow-hidden rounded-[32px] border border-white/10 bg-[#101010]/78 shadow-2xl shadow-black/30 lg:grid-cols-[1.55fr_.75fr]">
+        <a [routerLink]="['/projects', project.slug]" class="relative min-h-[22rem] overflow-hidden bg-black md:min-h-[30rem] lg:min-h-[34rem]">
+          <img class="h-full min-h-[22rem] w-full object-cover object-top opacity-90 transition duration-700 group-hover:scale-[1.035] md:min-h-[30rem] lg:min-h-[34rem]" [src]="project.image" [alt]="project.name + ' preview'" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-r from-black/34 via-transparent to-black/62"></div>
+          <div class="absolute left-5 top-5 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/76 backdrop-blur-xl">{{ project.eyebrow }}</div>
+          <div class="absolute bottom-5 left-5 rounded-2xl border border-white/10 bg-black/55 px-4 py-3 text-sm text-white/76 backdrop-blur-xl">
+            Click to view case study
+          </div>
         </a>
-        <div class="flex flex-col justify-center p-6 md:p-10">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#79a0ff]">Featured Project</p>
-          <h3 class="mt-4 text-3xl font-semibold text-white md:text-5xl">{{ project.name }}</h3>
-          <p class="mt-5 text-base leading-8 text-white/62">{{ project.description }}</p>
+        <div class="flex flex-col justify-center p-6 lg:p-8 xl:p-9">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#79a0ff]">Main Personal Project</p>
+          <h3 class="mt-4 text-3xl font-semibold leading-tight text-white xl:text-4xl">{{ project.name }}</h3>
+          <p class="mt-5 text-sm leading-7 text-white/62 xl:text-base">{{ project.description }}</p>
           <div class="mt-6 flex flex-wrap gap-2">
             @for (tech of project.technologies; track tech) {
               <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/72">{{ tech }}</span>
             }
           </div>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <app-magnetic-button [href]="project.links.github" variant="ghost">GitHub</app-magnetic-button>
-            <app-magnetic-button [href]="project.links.demo">Live Demo</app-magnetic-button>
+          <div class="mt-6 grid gap-3 text-sm text-white/62 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            @for (highlight of project.highlights.slice(0, 4); track highlight) {
+              <div class="rounded-2xl border border-white/8 bg-white/[0.035] px-4 py-3">{{ highlight }}</div>
+            }
+          </div>
+          <div class="mt-8 grid gap-3">
+            <a class="group/link rounded-2xl border border-[#5e8bff]/55 bg-[#5e8bff]/16 px-5 py-4 transition duration-300 hover:-translate-y-1 hover:bg-[#5e8bff]/24 hover:shadow-[0_18px_50px_rgba(94,139,255,.2)]" [href]="project.links.demo" target="_blank" rel="noopener">
+              <span class="flex items-center justify-between gap-4 text-sm font-semibold text-white">
+                Live Website
+                <span class="transition duration-300 group-hover/link:translate-x-1">Open</span>
+              </span>
+              <span class="mt-1 block text-xs text-white/48">zamy-minhnt09.vercel.app</span>
+            </a>
+            <a class="group/link rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-4 transition duration-300 hover:-translate-y-1 hover:border-white/22 hover:bg-white/[0.07]" [href]="project.links.github" target="_blank" rel="noopener">
+              <span class="flex items-center justify-between gap-4 text-sm font-semibold text-white">
+                GitHub Repo
+                <span class="transition duration-300 group-hover/link:translate-x-1">Open</span>
+              </span>
+              <span class="mt-1 block text-xs text-white/48">github.com/Minhnt09/Zamy</span>
+            </a>
           </div>
         </div>
       </article>
