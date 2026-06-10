@@ -1,0 +1,15 @@
+@if (href) {
+  <a
+    class="magnetic-button"
+    [class.magnetic-button--ghost]="variant === 'ghost'"
+    [href]="href"
+    target="_blank"
+    rel="noopener"
+  >
+    <span><ng-content /></span>
+  </a>
+} @else {
+  <button class="magnetic-button" [class.magnetic-button--ghost]="variant === 'ghost'" [type]="type">
+    <span><ng-content /></span>
+  </button>
+}

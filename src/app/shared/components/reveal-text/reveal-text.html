@@ -1,0 +1,11 @@
+@switch (tag) {
+  @case ('h1') {
+    <h1 class="reveal-line">{{ text }}</h1>
+  }
+  @case ('p') {
+    <p class="reveal-line">{{ text }}</p>
+  }
+  @default {
+    <span class="reveal-line">{{ text }}</span>
+  }
+}

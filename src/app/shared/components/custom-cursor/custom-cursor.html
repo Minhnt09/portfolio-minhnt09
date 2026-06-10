@@ -1,0 +1,7 @@
+<div
+  class="pointer-events-none fixed left-0 top-0 z-[80] hidden h-4 w-4 rounded-full border border-white/50 mix-blend-difference transition-[width,height,background,border] duration-300 lg:block"
+  [class.h-10]="hovering()"
+  [class.w-10]="hovering()"
+  [class.bg-white]="hovering()"
+  [style.transform]="'translate3d(' + (position().x - (hovering() ? 20 : 8)) + 'px,' + (position().y - (hovering() ? 20 : 8)) + 'px,0)'"
+></div>

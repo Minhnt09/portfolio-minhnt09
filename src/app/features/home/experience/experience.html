@@ -1,0 +1,16 @@
+<section id="experience" class="section-pad px-5">
+  <app-section-title eyebrow="Timeline" title="Learning through focused, practical milestones." description="A compact view of the path from IT fundamentals to Angular product development." />
+
+  <div class="timeline mx-auto max-w-4xl">
+    @for (item of experiences; track item.title; let i = $index) {
+      <div appRevealOnScroll [revealDelay]="i * 90" class="timeline-item relative grid gap-5 pb-10 pl-10 md:grid-cols-[1fr_1.4fr] md:gap-10 md:pl-0" [class.md:text-right]="i % 2 === 0">
+        <div class="timeline-dot absolute left-0 top-1 h-4 w-4 rounded-full border border-[#8dabff] bg-[#050505] shadow-[0_0_28px_rgba(94,139,255,.8)] md:left-1/2 md:-translate-x-1/2"></div>
+        <div [class.md:col-start-2]="i % 2 !== 0">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#79a0ff]">{{ item.period }}</p>
+          <h3 class="mt-2 text-2xl font-semibold text-white">{{ item.title }}</h3>
+        </div>
+        <p class="text-sm leading-7 text-white/58" [class.md:col-start-1]="i % 2 !== 0" [class.md:row-start-1]="i % 2 !== 0">{{ item.description }}</p>
+      </div>
+    }
+  </div>
+</section>

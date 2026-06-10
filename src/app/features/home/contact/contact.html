@@ -1,0 +1,22 @@
+<section id="contact" class="section-pad px-5">
+  <app-section-title eyebrow="Contact" title="Let's build something great together." description="Open to frontend opportunities, Angular projects, and thoughtful product interfaces." />
+
+  <div appRevealOnScroll class="mx-auto grid max-w-6xl gap-6 rounded-[32px] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/30 backdrop-blur-2xl md:grid-cols-[.85fr_1.15fr] md:p-8">
+    <div class="rounded-[26px] border border-white/8 bg-[#0b0b0b]/80 p-6">
+      <h3 class="text-2xl font-semibold text-white">Minh Nguyen</h3>
+      <p class="mt-3 text-sm leading-7 text-white/58">{{ profile.role }}</p>
+      <div class="mt-8 space-y-4 text-sm">
+        <a class="contact-link" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+        <a class="contact-link" [href]="profile.github" target="_blank" rel="noopener">GitHub</a>
+        <a class="contact-link" [href]="profile.linkedin">LinkedIn</a>
+      </div>
+    </div>
+
+    <form class="grid gap-4" (ngSubmit)="form = { name: '', email: '', message: '' }">
+      <input class="field" name="name" [(ngModel)]="form.name" placeholder="Name" required />
+      <input class="field" name="email" [(ngModel)]="form.email" placeholder="Email" type="email" required />
+      <textarea class="field min-h-36 resize-none" name="message" [(ngModel)]="form.message" placeholder="Message" required></textarea>
+      <app-magnetic-button type="submit">Send Message</app-magnetic-button>
+    </form>
+  </div>
+</section>

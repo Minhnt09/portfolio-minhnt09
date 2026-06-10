@@ -1,0 +1,29 @@
+<section id="projects" class="section-pad px-5">
+  <app-section-title eyebrow="Projects" title="A premium e-commerce showcase built with Angular." description="Practical features, responsive UI, and polished interaction details for a fashion storefront." />
+
+  <div class="mx-auto grid max-w-6xl gap-8">
+    @for (project of projects; track project.slug) {
+      <article appRevealOnScroll class="project-card interactive group grid overflow-hidden rounded-[32px] border border-white/10 bg-[#101010]/78 shadow-2xl shadow-black/30 md:grid-cols-[1.05fr_.95fr]">
+        <a [routerLink]="['/projects', project.slug]" class="relative min-h-[24rem] overflow-hidden bg-black">
+          <video class="h-full min-h-[24rem] w-full object-cover opacity-75 transition duration-700 group-hover:scale-105" autoplay loop muted playsinline preload="metadata" [src]="project.image"></video>
+          <div class="absolute inset-0 bg-gradient-to-tr from-black via-black/20 to-[#5e8bff]/20 opacity-80"></div>
+          <div class="absolute left-6 top-6 rounded-full border border-white/10 bg-black/45 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur-xl">{{ project.eyebrow }}</div>
+        </a>
+        <div class="flex flex-col justify-center p-6 md:p-10">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#79a0ff]">Featured Project</p>
+          <h3 class="mt-4 text-3xl font-semibold text-white md:text-5xl">{{ project.name }}</h3>
+          <p class="mt-5 text-base leading-8 text-white/62">{{ project.description }}</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            @for (tech of project.technologies; track tech) {
+              <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/72">{{ tech }}</span>
+            }
+          </div>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <app-magnetic-button [href]="project.links.github" variant="ghost">GitHub</app-magnetic-button>
+            <app-magnetic-button [href]="project.links.demo">Live Demo</app-magnetic-button>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
