@@ -4,7 +4,7 @@
   <div class="timeline mx-auto max-w-5xl">
     @for (item of experiences; track item.title; let i = $index) {
       <div appRevealOnScroll [revealDelay]="i * 90" class="timeline-item relative grid gap-5 pb-10 pl-10 md:grid-cols-[.82fr_1.25fr] md:gap-10 md:pl-0" [class.md:text-right]="i % 2 === 0">
-        <div class="timeline-dot absolute left-0 top-1 h-4 w-4 rounded-full border border-[#8dabff] bg-[#050505] shadow-[0_0_28px_rgba(94,139,255,.8)] md:left-1/2 md:-translate-x-1/2"></div>
+        <div class="timeline-dot absolute left-0 top-1 h-4 w-4 rounded-full border border-[#8dabff] bg-[#050505] shadow-[0_0_28px_rgba(94,139,255,.8)] md:left-[41%] md:-translate-x-1/2"></div>
         <div class="rounded-[24px] border border-white/8 bg-white/[0.035] p-5" [class.md:col-start-2]="i % 2 !== 0">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#79a0ff]">{{ item.category }}</p>
           <h3 class="mt-2 text-2xl font-semibold text-white">{{ item.title }}</h3>
