@@ -9,11 +9,16 @@ export class MagneticButton {
   @Input() href = '';
   @Input() variant: 'primary' | 'ghost' = 'primary';
   @Input() type: 'button' | 'submit' = 'button';
+  @Input() disabled = false;
 
   private readonly element = inject(ElementRef<HTMLElement>);
 
   @HostListener('mousemove', ['$event'])
   onMove(event: MouseEvent): void {
+    if (this.disabled) {
+      return;
+    }
+
     const rect = this.element.nativeElement.getBoundingClientRect();
     const x = (event.clientX - rect.left - rect.width / 2) * 0.18;
     const y = (event.clientY - rect.top - rect.height / 2) * 0.18;

@@ -9,7 +9,7 @@
     <span><ng-content /></span>
   </a>
 } @else {
-  <button class="magnetic-button" [class.magnetic-button--ghost]="variant === 'ghost'" [type]="type">
+  <button class="magnetic-button" [class.magnetic-button--ghost]="variant === 'ghost'" [type]="type" [disabled]="disabled">
     <span><ng-content /></span>
   </button>
 }

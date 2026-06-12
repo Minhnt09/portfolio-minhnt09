@@ -176,6 +176,12 @@ textarea {
   box-shadow: 0 22px 68px rgba(94, 139, 255, 0.38);
 }
 
+.magnetic-button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+  transform: translate3d(0, 0, 0);
+}
+
 .magnetic-button--ghost {
   background: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.84);

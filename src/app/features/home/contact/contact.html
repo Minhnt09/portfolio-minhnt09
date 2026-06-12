@@ -56,11 +56,18 @@
       </div>
     </div>
 
-    <form class="grid gap-4" (ngSubmit)="form = { name: '', email: '', message: '' }">
-      <input class="field" name="name" [(ngModel)]="form.name" placeholder="Name" required />
-      <input class="field" name="email" [(ngModel)]="form.email" placeholder="Email" type="email" required />
-      <textarea class="field min-h-36 resize-none" name="message" [(ngModel)]="form.message" placeholder="Message" required></textarea>
-      <app-magnetic-button type="submit">Send Message</app-magnetic-button>
+    <form class="grid gap-4" #contactForm="ngForm" (ngSubmit)="contactForm.valid && sendMessage()">
+      <input class="field" name="name" [(ngModel)]="form.name" placeholder="Name" required [disabled]="isSending" />
+      <input class="field" name="email" [(ngModel)]="form.email" placeholder="Email" type="email" required [disabled]="isSending" />
+      <textarea class="field min-h-36 resize-none" name="message" [(ngModel)]="form.message" placeholder="Message" required [disabled]="isSending"></textarea>
+      <app-magnetic-button type="submit" [disabled]="isSending || contactForm.invalid === true">
+        {{ isSending ? 'Sending...' : 'Send Message' }}
+      </app-magnetic-button>
+      @if (statusMessage) {
+        <p class="text-sm" [class.text-[#8bb0ff]]="status === 'success'" [class.text-red-300]="status === 'error'">
+          {{ statusMessage }}
+        </p>
+      }
     </form>
   </div>
 </section>
