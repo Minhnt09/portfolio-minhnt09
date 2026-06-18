@@ -22,8 +22,9 @@ export const profile = {
 export const navItems = [
   { label: 'Home', target: 'home' },
   { label: 'About', target: 'about' },
-  { label: 'Projects', target: 'projects' },
   { label: 'Skills', target: 'skills' },
+  { label: 'Experience', target: 'experience' },
+  { label: 'Projects', target: 'projects' },
   { label: 'Contact', target: 'contact' },
 ];
 
