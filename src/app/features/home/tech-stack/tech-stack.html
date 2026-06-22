@@ -1,7 +1,7 @@
 <section id="skills" class="section-pad px-5">
   <app-section-title eyebrow="Tech Stack" title="Tools I use to craft responsive products." description="A focused frontend stack centered on Angular, TypeScript, Tailwind CSS, APIs, and maintainable workflows." />
 
-  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4">
     @for (skill of skills; track skill.name; let i = $index) {
       <div appRevealOnScroll [revealDelay]="i * 45" class="skill-card interactive rounded-[24px] border border-white/8 bg-white/[0.035] p-5 transition duration-500 hover:-translate-y-2 hover:rotate-[1deg] hover:scale-[1.03] hover:border-[#5e8bff]/45">
         <div class="grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-[#5e8bff]/12 text-sm font-bold text-[#a9bdff] shadow-[0_0_30px_rgba(94,139,255,.18)]">{{ skill.icon }}</div>

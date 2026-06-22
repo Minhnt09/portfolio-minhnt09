@@ -10,7 +10,7 @@
         </div>
         <p class="text-base leading-8 text-white/64 md:text-lg">{{ profile.description }}</p>
       </div>
-      <div class="grid gap-3 border-t border-white/8 p-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div class="grid gap-3 border-t border-white/8 p-4 md:grid-cols-2 lg:grid-cols-5">
         @for (fact of facts; track fact[0]; let i = $index) {
           <div appRevealOnScroll [revealDelay]="i * 70" class="rounded-[22px] border border-white/8 bg-white/[0.035] p-5 transition duration-500 hover:-translate-y-1 hover:border-[#5e8bff]/45">
             <p class="text-xs uppercase tracking-[0.18em] text-white/38">{{ fact[0] }}</p>

@@ -1,18 +1,18 @@
-<section class="min-h-dvh px-5 pb-20 pt-32">
+<section class="min-h-dvh px-5 pb-16 pt-28 md:pb-20 md:pt-32">
   <div class="mx-auto max-w-6xl">
     <a routerLink="/" class="link-underline text-sm text-white/60">Back to home</a>
 
     <div appRevealOnScroll class="mt-10 grid gap-8 md:grid-cols-[1fr_.85fr]">
-      <div>
+      <div class="min-w-0">
         <p class="text-sm font-semibold uppercase tracking-[0.22em] text-[#79a0ff]">{{ project().eyebrow }}</p>
-        <h1 class="mt-4 text-4xl font-semibold leading-tight text-white md:text-7xl">{{ project().name }}</h1>
-        <p class="mt-6 max-w-3xl text-lg leading-8 text-white/62">{{ project().longDescription }}</p>
+        <h1 class="mt-4 text-[2.5rem] font-semibold leading-tight text-white md:text-7xl">{{ project().name }}</h1>
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/62 md:text-lg md:leading-8">{{ project().longDescription }}</p>
         <div class="mt-8 flex flex-wrap gap-2">
           @for (highlight of project().highlights; track highlight) {
             <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">{{ highlight }}</span>
           }
         </div>
-        <div class="mt-9 grid max-w-2xl gap-3 sm:grid-cols-2">
+        <div class="mt-9 grid max-w-2xl gap-3 md:grid-cols-2">
           <a class="rounded-2xl border border-[#5e8bff]/55 bg-[#5e8bff]/16 px-5 py-4 transition duration-300 hover:-translate-y-1 hover:bg-[#5e8bff]/24" [href]="project().links.demo" target="_blank" rel="noopener">
             <span class="block text-sm font-semibold text-white">Live Website</span>
             <span class="mt-1 block text-xs text-white/48">Open deployed project</span>
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="overflow-hidden rounded-[32px] border border-white/10 bg-[#101010] shadow-2xl shadow-black/40">
+      <div class="overflow-hidden rounded-[24px] border border-white/10 bg-[#101010] shadow-2xl shadow-black/40 md:rounded-[32px]">
         <img class="aspect-[16/11] h-full w-full object-cover object-top opacity-90" [src]="project().image" [alt]="project().name + ' preview'" loading="lazy" />
       </div>
     </div>

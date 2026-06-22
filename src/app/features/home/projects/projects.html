@@ -3,25 +3,25 @@
 
   <div class="mx-auto grid max-w-7xl gap-8">
     @for (project of projects; track project.slug) {
-      <article appRevealOnScroll class="project-card interactive group grid overflow-hidden rounded-[32px] border border-white/10 bg-[#101010]/78 shadow-2xl shadow-black/30 lg:grid-cols-[1.55fr_.75fr]">
-        <a [routerLink]="['/projects', project.slug]" class="relative min-h-[22rem] overflow-hidden bg-black md:min-h-[30rem] lg:min-h-[34rem]">
-          <img class="h-full min-h-[22rem] w-full object-cover object-top opacity-90 transition duration-700 group-hover:scale-[1.035] md:min-h-[30rem] lg:min-h-[34rem]" [src]="project.image" [alt]="project.name + ' preview'" loading="lazy" />
+      <article appRevealOnScroll class="project-card interactive group grid overflow-hidden rounded-[24px] border border-white/10 bg-[#101010]/78 shadow-2xl shadow-black/30 md:rounded-[32px] lg:grid-cols-[1.55fr_.75fr]">
+        <a [routerLink]="['/projects', project.slug]" class="relative min-h-[15rem] overflow-hidden bg-black min-[430px]:min-h-[17rem] md:min-h-[30rem] lg:min-h-[34rem]">
+          <img class="h-full min-h-[15rem] w-full object-cover object-top opacity-90 transition duration-700 group-hover:scale-[1.035] min-[430px]:min-h-[17rem] md:min-h-[30rem] lg:min-h-[34rem]" [src]="project.image" [alt]="project.name + ' preview'" loading="lazy" />
           <div class="absolute inset-0 bg-gradient-to-r from-black/34 via-transparent to-black/62"></div>
-          <div class="absolute left-5 top-5 rounded-full border border-white/10 bg-black/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/76 backdrop-blur-xl">{{ project.eyebrow }}</div>
-          <div class="absolute bottom-5 left-5 rounded-2xl border border-white/10 bg-black/55 px-4 py-3 text-sm text-white/76 backdrop-blur-xl">
+          <div class="absolute left-4 right-4 top-4 rounded-2xl border border-white/10 bg-black/55 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/76 backdrop-blur-xl md:left-5 md:right-auto md:top-5 md:rounded-full md:px-4 md:tracking-[0.2em]">{{ project.eyebrow }}</div>
+          <div class="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-black/55 px-4 py-3 text-sm text-white/76 backdrop-blur-xl md:bottom-5 md:left-5 md:right-auto">
             Click to view case study
           </div>
         </a>
-        <div class="flex flex-col justify-center p-6 lg:p-8 xl:p-9">
+        <div class="flex min-w-0 flex-col justify-center p-5 md:p-6 lg:p-8 xl:p-9">
           <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#79a0ff]">Main Personal Project</p>
-          <h3 class="mt-4 text-3xl font-semibold leading-tight text-white xl:text-4xl">{{ project.name }}</h3>
-          <p class="mt-5 text-sm leading-7 text-white/62 xl:text-base">{{ project.description }}</p>
+          <h3 class="mt-4 text-2xl font-semibold leading-tight text-white md:text-3xl xl:text-4xl">{{ project.name }}</h3>
+          <p class="mt-5 text-[15px] leading-7 text-white/62 xl:text-base">{{ project.description }}</p>
           <div class="mt-6 flex flex-wrap gap-2">
             @for (tech of project.technologies; track tech) {
               <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/72">{{ tech }}</span>
             }
           </div>
-          <div class="mt-6 grid gap-3 text-sm text-white/62 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          <div class="mt-6 grid gap-3 text-sm text-white/62 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
             @for (highlight of project.highlights.slice(0, 4); track highlight) {
               <div class="rounded-2xl border border-white/8 bg-white/[0.035] px-4 py-3">{{ highlight }}</div>
             }
