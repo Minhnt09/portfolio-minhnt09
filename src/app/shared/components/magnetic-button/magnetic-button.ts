@@ -7,9 +7,10 @@ import { Component, ElementRef, HostListener, Input, inject } from '@angular/cor
 })
 export class MagneticButton {
   @Input() href = '';
-  @Input() variant: 'primary' | 'ghost' = 'primary';
+  @Input() variant: 'primary' | 'ghost' | 'cv' = 'primary';
   @Input() type: 'button' | 'submit' = 'button';
   @Input() disabled = false;
+  @Input() download = '';
 
   private readonly element = inject(ElementRef<HTMLElement>);
 

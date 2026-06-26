@@ -24,7 +24,12 @@
         {{ profile.description }}
       </p>
       <div class="hero-reveal mt-7 flex flex-col gap-3 min-[430px]:flex-row min-[430px]:flex-wrap md:mt-9">
-        <app-magnetic-button (click)="goTo('projects')">View Projects</app-magnetic-button>
+        <app-magnetic-button variant="cv" href="/assets/cv/CV_NguyenThienMinh_Frontend.pdf" download="CV_NguyenThienMinh_Frontend.pdf">
+          <span class="cv-button-label">T&#7843;i CV</span>
+          <svg class="cv-download-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M5 19h14" />
+          </svg>
+        </app-magnetic-button>
         <app-magnetic-button variant="ghost" (click)="goTo('contact')">Contact Me</app-magnetic-button>
       </div>
     </div>

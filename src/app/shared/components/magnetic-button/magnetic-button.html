@@ -2,14 +2,22 @@
   <a
     class="magnetic-button"
     [class.magnetic-button--ghost]="variant === 'ghost'"
+    [class.magnetic-button--cv]="variant === 'cv'"
     [href]="href"
-    target="_blank"
-    rel="noopener"
+    [attr.download]="download || null"
+    [attr.target]="download ? null : '_blank'"
+    [attr.rel]="download ? null : 'noopener'"
   >
     <span><ng-content /></span>
   </a>
 } @else {
-  <button class="magnetic-button" [class.magnetic-button--ghost]="variant === 'ghost'" [type]="type" [disabled]="disabled">
+  <button
+    class="magnetic-button"
+    [class.magnetic-button--ghost]="variant === 'ghost'"
+    [class.magnetic-button--cv]="variant === 'cv'"
+    [type]="type"
+    [disabled]="disabled"
+  >
     <span><ng-content /></span>
   </button>
 }
